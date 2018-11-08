@@ -19,4 +19,10 @@ describe "Author index page", type: :feature do
     visit authors_path
     expect(page).to have_link 'New', href: new_author_path
   end
+
+  it "should have a link to the author's individual page" do
+    visit authors_path
+    @alan = FactoryBot.create :author
+    expect(page).to have_link 'View', href: author_path(@alan)
+  end
 end
