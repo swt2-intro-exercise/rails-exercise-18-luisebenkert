@@ -1,3 +1,5 @@
+include AuthorsHelper
+
 describe "New author page", :type => :model do
 
   first_name = 'Alan'
@@ -13,6 +15,6 @@ describe "New author page", :type => :model do
 
   it "should return the full name on function call name()" do
     author = Author.create(first_name: first_name, last_name: last_name, homepage: homepage)
-    expect(author.name()).to eq(first_name + ' ' + last_name)
+    expect(author.name()).to eq(concat_strings(first_name, last_name))
   end
 end
