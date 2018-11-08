@@ -1,5 +1,18 @@
 <h1>New Author</h1>
 
+<% if @author.errors.any? %>
+  <div id='error_message'>
+    <p>
+      The author couldn't be saved because of the following errors:
+    </p>
+    <ul>
+      <% @author.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+
 <%= form_with scope: :author, url: authors_path, local: true do |form| %>
   <p>
     <%= form.label :first_name %>

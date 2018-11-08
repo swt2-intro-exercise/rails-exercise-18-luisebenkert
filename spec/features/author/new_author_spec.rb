@@ -22,6 +22,6 @@ describe "New author page", type: :feature do
 
     click_on 'submit'
 
-    expect(page).to have_text('Expected to find text matching /error/i in "all authors\nnew author\nfirst name last name homepage alan turing http://wikipedia.org/alan_turing view"')
+    expect(page).to have_css('.field_with_errors')
   end
 end
