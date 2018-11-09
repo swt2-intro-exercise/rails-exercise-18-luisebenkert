@@ -17,4 +17,9 @@ describe "New author page", :type => :model do
     author = Author.create(first_name: first_name, last_name: last_name, homepage: homepage)
     expect(author.name()).to eq(concat_strings(first_name, last_name))
   end
+
+  it "should have an empty list of papers" do
+    @author = FactoryBot.create :author
+    expect(@author.paper).to eq([])
+  end
 end
