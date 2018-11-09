@@ -4,6 +4,6 @@ class Paper < ApplicationRecord
   validates :year, presence: true, numericality: { only_integer: true }
 
   def authors
-    {}
+    []
   end
 end
