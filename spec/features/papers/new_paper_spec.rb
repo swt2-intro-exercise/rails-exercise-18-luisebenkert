@@ -13,4 +13,12 @@ describe "New Paper page", type: :feature do
 
     expect(paper).to_not be_valid
   end
+
+  it "should not validate if venue is missing" do
+    visit new_paper_path
+
+    paper = Paper.new(title:"computing machinery and intelligence", year: 1950)
+
+    expect(paper).to_not be_valid
+  end
 end
