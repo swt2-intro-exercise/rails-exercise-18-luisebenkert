@@ -31,4 +31,11 @@ describe "Author index page", type: :feature do
     visit authors_path
     expect(page).to have_link 'Edit', href: edit_author_path(@alan)
   end
+
+  it "should have a link to delete the author" do
+    @alan = FactoryBot.create :author
+    url = author_path(@alan)
+    visit authors_path
+    expect(page).to have_css("a[data-method='delete'][href='#{url}']")
+  end
 end
