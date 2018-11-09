@@ -6,4 +6,10 @@ describe "New paper page", :type => :model do
     @paper = FactoryBot.create :paper
     expect(@paper.authors).to eq([])
   end
+
+  it "should cause no error when having a paper with an author" do
+    @paper = FactoryBot.create :paper
+    @author = FactoryBot.create :author
+    @paper.authors = [@author]
+  end
 end
