@@ -29,4 +29,12 @@ describe "New Paper page", type: :feature do
 
     expect(paper).to_not be_valid
   end
+
+  it "should not validate if year is not numeric" do
+    visit new_paper_path
+
+    paper = Paper.new(title:"computing machinery and intelligence", venue: "mind 49: 433-460", year: "nineteen-fifty")
+
+    expect(paper).to_not be_valid
+  end
 end
