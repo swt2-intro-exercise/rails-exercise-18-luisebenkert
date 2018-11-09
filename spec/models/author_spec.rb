@@ -20,6 +20,6 @@ describe "New author page", :type => :model do
 
   it "should have an empty list of papers" do
     @author = FactoryBot.create :author
-    expect(@author.paper).to eq([])
+    expect(@author.papers).to eq([])
   end
 end
